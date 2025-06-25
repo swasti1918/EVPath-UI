@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | EVPath</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="particles-background"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="EVPath Logo" class="logo">
+        <span class="site-title">EVPath</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="map.html" class="nav-link">Live Map</a>
+        <a href="partner.html" class="nav-link">Partners</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="login.html" class="btn btn-outline">Login</a>
+      </div>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Contact Hero -->
+  <section class="contact-hero">
+    <div class="contact-hero-content">
+      <h1>Get in <span class="text-gradient">Touch</span></h1>
+      <p>We'd love to hear from you. Reach out with your queries, suggestions, or feedback.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3>Email Us</h3>
+          <p>support@evpath.com</p>
+          <a href="mailto:support@evpath.com" class="btn btn-outline">Send Email</a>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3>Call Us</h3>
+          <p>+1 (555) 123-4567</p>
+          <a href="tel:+15551234567" class="btn btn-outline">Call Now</a>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Visit Us</h3>
+          <p>123 EV Street, Tech City, TC 12345</p>
+          <a href="https://maps.google.com" target="_blank" class="btn btn-outline">Get Directions</a>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="section-header">
+      <h2>Frequently Asked <span class="text-gradient">Questions</span></h2>
+      <p>Find quick answers to common questions</p>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I find charging stations along my route?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Simply enter your start and destination points in our Live Map, and EVPath will automatically display optimal charging stations along your route based on your vehicle's range and charging preferences.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Is EVPath free to use?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! EVPath offers a free tier with access to all basic features. We also offer premium subscriptions with additional features like real-time station availability and premium support.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          How accurate are the charging times?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Our charging time estimates are based on your vehicle's specifications, charger type, and historical data. While we strive for accuracy, actual charging times may vary based on factors like battery condition and temperature.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I add my business as a charging station?
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely! We welcome partnerships with charging station operators. Visit our Partners page to learn more about listing your stations on EVPath.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="logo-link">
+          <img src="images/logo.svg" alt="EVPath Logo" class="logo">
+          <span class="site-title">EVPath</span>
+        </a>
+        <p>Making electric journeys smarter, one route at a time.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="map.html">Live Map</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="partner.html">Partners</a></li>
+          <li><a href="press.html">Press</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 EVPath. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

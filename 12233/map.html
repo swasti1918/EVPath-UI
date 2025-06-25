@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVPath Live Map</title>
+  <link rel="stylesheet" href="css/map.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Loading overlay styles */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .loading-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(0, 230, 118, 0.2);
+      border-radius: 50%;
+      border-top-color: #00e676;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Map Navigation -->
+  <nav class="map-nav">
+    <div class="map-nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="EVPath Logo" class="logo">
+        <span class="site-title">EVPath</span>
+      </a>
+      <div class="map-nav-actions">
+        <button id="user-menu" class="btn-icon" aria-label="User menu">
+          <i class="material-icons">account_circle</i>
+        </button>
+        <button id="menu-toggle" class="btn-icon" aria-label="Main menu">
+          <i class="material-icons">menu</i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Map Container -->
+  <div id="map"></div>
+
+  <!-- Search Panel -->
+  <div class="search-panel">
+    <div class="search-container">
+      <div class="search-input">
+        <i class="material-icons">search</i>
+        <input type="text" id="search-input" placeholder="Search for locations..." aria-label="Search locations">
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Route Controls -->
+  <div class="route-controls">
+    <div class="route-inputs">
+      <div class="input-group">
+        <label for="origin">From</label>
+        <input type="text" id="origin" placeholder="Current location">
+      </div>
+      <div class="input-group">
+        <label for="destination">To</label>
+        <input type="text" id="destination" placeholder="Destination">
+      </div>
+    </div>
+    <button id="calculate-route" class="btn btn-primary">
+      <i class="material-icons">directions</i>
+      <span>Calculate Route</span>
+    </button>
+  </div>
+
+  <!-- Charging Stations Panel -->
+  <div class="stations-panel">
+    <div class="panel-header">
+      <h3>Charging Stations Along Route</h3>
+      <button class="btn-icon" id="close-stations" aria-label="Close stations panel">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+    <div class="stations-list" id="stations-list"></div>
+  </div>
+
+  <!-- Vehicle Selector -->
+  <div class="vehicle-selector">
+    <div class="vehicle-current">
+      <img src="images/vehicle-icon.svg" alt="Current vehicle" id="current-vehicle-icon">
+      <span id="current-vehicle">Tesla Model 3</span>
+      <i class="material-icons">arrow_drop_down</i>
+    </div>
+    <div class="vehicle-options">
+      <div class="vehicle-option" data-vehicle="tesla-model3" data-range="500">
+        <img src="images/tesla-model3.svg" alt="Tesla Model 3">
+        <span>Tesla Model 3 (500km)</span>
+      </div>
+      <div class="vehicle-option" data-vehicle="nissan-leaf" data-range="240">
+        <img src="images/nissan-leaf.svg" alt="Nissan Leaf">
+        <span>Nissan Leaf (240km)</span>
+      </div>
+      <div class="vehicle-option" data-vehicle="audi-etron" data-range="400">
+        <img src="images/audi-etron.svg" alt="Audi e-tron">
+        <span>Audi e-tron (400km)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="loading-spinner"></div>
+    <p>Calculating optimal route...</p>
+  </div>
+
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_AIc_0RlQfWwl8AN5G0xfAYNZQbv2CWY&libraries=places,geometry&callback=initMap" async defer></script>
+  
+  <!-- Map JavaScript -->
+  <script src="js/map.js"></script>
+</body>
+</html>
